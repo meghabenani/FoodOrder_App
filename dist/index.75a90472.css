@@ -1,0 +1,66 @@
+.app_logo, .res_logo {
+  width: 180px;
+  height: 180px;
+}
+
+.navbar {
+  justify-content: space-around;
+  display: flex;
+}
+
+.nav-items {
+  justify-content: space-between;
+  gap: 20px;
+  font-size: larger;
+  display: flex;
+}
+
+.nav-items li {
+  list-style: none;
+}
+
+.nav-items li:hover {
+  font-size: large;
+}
+
+.body {
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+  display: flex;
+}
+
+.resCard {
+  text-align: center;
+  border: 1px solid #59e959;
+  border-radius: 15px;
+  width: 310px;
+  height: 330px;
+  transition: transfrom 2s;
+  overflow: auto;
+}
+
+.resCard:hover {
+  transform: translate(5px, 5px);
+}
+
+.rated_btn {
+  margin-top: 20px;
+}
+
+.searchText {
+  margin: 10px;
+}
+
+.search {
+  display: inline;
+}
+
+.shimmer {
+  background-color: #dbdbdb;
+  flex-wrap: wrap;
+  width: 310px;
+  height: 300px;
+  display: flex;
+}
+/*# sourceMappingURL=index.75a90472.css.map */
