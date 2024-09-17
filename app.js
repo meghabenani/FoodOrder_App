@@ -15,7 +15,7 @@ let App=()=>{
         <div className="app">
             <Navbar/>
             <Res_menu/>
-            {/* <Outlet/> */}
+            <Outlet/>
         </div>
     )
 }

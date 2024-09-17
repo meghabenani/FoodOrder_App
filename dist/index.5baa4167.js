@@ -2985,6 +2985,11 @@ let App = ()=>{
                 fileName: "app.js",
                 lineNumber: 17,
                 columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Outlet), {}, void 0, false, {
+                fileName: "app.js",
+                lineNumber: 18,
+                columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
@@ -34968,29 +34973,35 @@ var _react = require("react");
 var _s = $RefreshSig$();
 let Res_menu = ()=>{
     _s();
+    var _s1 = $RefreshSig$();
     let [data, setData] = (0, _react.useState)("");
     let [menu1, setMenu1] = (0, _react.useState)("");
     let [menu2, setMenu2] = (0, _react.useState)("");
     let [menu3, setMenu3] = (0, _react.useState)("");
     let fetchApi = async ()=>{
-        let res = await fetch("https://www.swiggy.com/mapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=18.5780302&lng=73.6833417&restaurantId=3415&submitAction=ENTER");
-        let data = await res.json();
-        setData(data?.data?.cards[2]?.card?.card?.info);
-        console.log(data?.data?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards[4]?.card?.card);
-        setMenu1(data?.data?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card);
-        setMenu2(data?.data?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards[3]?.card?.card);
-        setMenu3(data?.data?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards[4]?.card?.card);
+        _s1();
+        try {
+            let res = await fetch("https://www.swiggy.com/mapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=18.5780302&lng=73.6833417&restaurantId=3415");
+            let data = await res.json();
+            setData(data?.data?.cards[2]?.card?.card?.info);
+            setMenu1(data?.data?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card);
+            setMenu2(data?.data?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards[3]?.card?.card);
+            setMenu3(data?.data?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards[4]?.card?.card);
+        } catch (err) {
+            console.log(err);
+        }
+        (0, _react.useEffect)(()=>{
+            fetchApi();
+        }, []);
     };
-    (0, _react.useEffect)(()=>{
-        fetchApi();
-    }, []);
+    _s1(fetchApi, "OD7bBpZva5O2jO+Puf00hKivP7c=");
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
                 children: data.name
             }, void 0, false, {
                 fileName: "Components/Res_menu.jsx",
-                lineNumber: 39,
+                lineNumber: 40,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35004,7 +35015,7 @@ let Res_menu = ()=>{
                                 children: "\u2605 "
                             }, void 0, false, {
                                 fileName: "Components/Res_menu.jsx",
-                                lineNumber: 42,
+                                lineNumber: 43,
                                 columnNumber: 11
                             }, undefined),
                             data.avgRating,
@@ -35016,7 +35027,7 @@ let Res_menu = ()=>{
                         ]
                     }, void 0, true, {
                         fileName: "Components/Res_menu.jsx",
-                        lineNumber: 41,
+                        lineNumber: 42,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -35027,7 +35038,7 @@ let Res_menu = ()=>{
                         children: data.cuisines.join(", ")
                     }, void 0, false, {
                         fileName: "Components/Res_menu.jsx",
-                        lineNumber: 46,
+                        lineNumber: 47,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -35038,20 +35049,20 @@ let Res_menu = ()=>{
                         ]
                     }, void 0, true, {
                         fileName: "Components/Res_menu.jsx",
-                        lineNumber: 49,
+                        lineNumber: 50,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "Components/Res_menu.jsx",
-                lineNumber: 40,
+                lineNumber: 41,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
                 children: "Top Picks"
             }, void 0, false, {
                 fileName: "Components/Res_menu.jsx",
-                lineNumber: 53,
+                lineNumber: 54,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35061,7 +35072,7 @@ let Res_menu = ()=>{
                         children: menu1.title
                     }, void 0, false, {
                         fileName: "Components/Res_menu.jsx",
-                        lineNumber: 55,
+                        lineNumber: 57,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35075,19 +35086,19 @@ let Res_menu = ()=>{
                                 ]
                             }, void 0, true, {
                                 fileName: "Components/Res_menu.jsx",
-                                lineNumber: 59,
+                                lineNumber: 61,
                                 columnNumber: 15
                             }, undefined);
                         })
                     }, void 0, false, {
                         fileName: "Components/Res_menu.jsx",
-                        lineNumber: 56,
+                        lineNumber: 58,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "Components/Res_menu.jsx",
-                lineNumber: 54,
+                lineNumber: 56,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35097,7 +35108,7 @@ let Res_menu = ()=>{
                         children: menu2.title
                     }, void 0, false, {
                         fileName: "Components/Res_menu.jsx",
-                        lineNumber: 68,
+                        lineNumber: 70,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35111,19 +35122,19 @@ let Res_menu = ()=>{
                                 ]
                             }, void 0, true, {
                                 fileName: "Components/Res_menu.jsx",
-                                lineNumber: 72,
+                                lineNumber: 74,
                                 columnNumber: 15
                             }, undefined);
                         })
                     }, void 0, false, {
                         fileName: "Components/Res_menu.jsx",
-                        lineNumber: 69,
+                        lineNumber: 71,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "Components/Res_menu.jsx",
-                lineNumber: 67,
+                lineNumber: 69,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35133,7 +35144,7 @@ let Res_menu = ()=>{
                         children: menu3.title
                     }, void 0, false, {
                         fileName: "Components/Res_menu.jsx",
-                        lineNumber: 81,
+                        lineNumber: 83,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35147,29 +35158,29 @@ let Res_menu = ()=>{
                                 ]
                             }, void 0, true, {
                                 fileName: "Components/Res_menu.jsx",
-                                lineNumber: 85,
+                                lineNumber: 87,
                                 columnNumber: 15
                             }, undefined);
                         })
                     }, void 0, false, {
                         fileName: "Components/Res_menu.jsx",
-                        lineNumber: 82,
+                        lineNumber: 84,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "Components/Res_menu.jsx",
-                lineNumber: 80,
+                lineNumber: 82,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "Components/Res_menu.jsx",
-        lineNumber: 38,
+        lineNumber: 39,
         columnNumber: 5
     }, undefined);
 };
-_s(Res_menu, "fplPiJ1uygXnsZ1t0Q5G4anmxS8=");
+_s(Res_menu, "OTqDf2zY5Ye3WKcVhd5ZBsj5yUA=");
 _c = Res_menu;
 exports.default = Res_menu;
 var _c;
