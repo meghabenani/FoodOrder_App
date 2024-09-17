@@ -61,6 +61,11 @@
     display: flex;
     flex-wrap: wrap;
     height: 300px;
-    width: 310px;
-    
+    width: 310px;    
 }
+
+.card{
+    text-decoration: none;
+    color: black;
+}
+

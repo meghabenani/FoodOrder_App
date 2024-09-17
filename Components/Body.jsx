@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Res_Card from "./Res_Card";
 import Shimmer from "./Shimmer";
 import Res_menu from "./Res_menu";
+import { Link } from "react-router-dom";
 
 let Body = () => {
   let [resData, setResdata] = useState([]);
@@ -60,12 +61,21 @@ let Body = () => {
         </button>
       </div>
 
-      <div className="body">
+      <div
+        className="body"
+        onClick={() => {
+          <Res_menu />;
+        }}
+      >
         {rated.length === 0 ? (
           <Shimmer />
         ) : (
           rated.map((i) => {
-            return <Res_Card key={i.info.id} resData={i} />;
+            return (
+              <Link key={i.info.id} to={"/restaurant/" + i.info.id}>
+                <Res_Card resData={i} style={{ textDecoration: "none" }} />
+              </Link>
+            );
           })
         )}
       </div>

@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
+import { useParams } from "react-router";
 
 let Res_menu = () => {
+  let { resId } = useParams();
   let [data, setData] = useState("");
   let [menu1, setMenu1] = useState("");
   let [menu2, setMenu2] = useState("");
@@ -9,7 +11,8 @@ let Res_menu = () => {
   let fetchApi = async () => {
     try {
       let res = await fetch(
-        "https://www.swiggy.com/mapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=18.5780302&lng=73.6833417&restaurantId=3415"
+        "https://www.swiggy.com/mapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=18.5780302&lng=73.6833417&restaurantId=" +
+          resId
       );
       let data = await res.json();
       setData(data?.data?.cards[2]?.card?.card?.info);
@@ -29,11 +32,11 @@ let Res_menu = () => {
     } catch (err) {
       console.log(err);
     }
-
-    useEffect(() => {
-      fetchApi();
-    }, []);
   };
+
+  useEffect(() => {
+    fetchApi();
+  });
 
   return (
     <div>

@@ -11,10 +11,10 @@ import Res_menu from "./Components/Res_menu";
 
 
 let App=()=>{
+    
     return(
         <div className="app">
             <Navbar/>
-            <Res_menu/>
             <Outlet/>
         </div>
     )
@@ -40,6 +40,10 @@ let router=createBrowserRouter([
                 path:"/contact",
                 element:<Contact/>
             },
+            {
+                path:"/restaurant/:resId" ,
+                element:<Res_menu/>
+            }
             
         ],
         errorElement:<Error/>

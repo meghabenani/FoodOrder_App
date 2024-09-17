@@ -1,11 +1,10 @@
 import { res_logo } from "../Mockdata/img_links";
-import Res_menu from "./Res_menu";
 
 let Res_Card = ({ resData }) => {
   let { name, cloudinaryImageId, cuisines, avgRating } = resData.info;
   let { deliveryTime } = resData.info.sla;
   return (
-    <div className="resCard">
+    <div className="resCard" onClick={() => {}}>
       <img className="res_logo" src={res_logo + cloudinaryImageId} alt="" />
       <h2>{name}</h2>
       <div style={{ fontWeight: "bold" }}>
