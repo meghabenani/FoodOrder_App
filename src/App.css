@@ -1,0 +1,86 @@
+.header{
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 30px;
+}
+
+.header h1{
+  margin-left: 100px;
+}
+
+.header li{
+  list-style: none;
+  margin: 5px;
+  padding: 10px;
+  
+}
+
+.header img,.res_logo{
+  height: 250px;
+  width: 250px;
+}
+
+.header ul{
+  display: flex;
+  
+}
+
+
+.btn{ 
+  /* display: inline; */
+  height: fit-content;
+  padding: 15px;
+  margin-inline:20px;
+  border-radius: 50px;
+  color: white;
+  background-color: green;
+  border: 2px solid black;
+}
+
+.app{
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 20px;
+  gap:20px;
+  justify-content: center;
+  
+}
+
+
+
+.cards{
+  width: 300px;
+  height: fit-content;
+  border: 1px solid gray;
+  text-align: center;
+  
+}
+
+
+.cards:hover{
+  border: 1px solid black;
+}
+
+.input{
+  /* margin-top: 20px; */
+  margin-left: 20px;
+  margin-bottom: 30px;
+  width: 230px;
+  
+}
+
+.rate{
+  margin-left: 30px;
+}
+
+.shimmer{
+  border:1px solid gray;
+  width:300px;
+  height: 300px;
+  margin: 5px;
+}
+
+.shim-card{
+  display: flex;
+  flex-wrap: wrap;
+}
