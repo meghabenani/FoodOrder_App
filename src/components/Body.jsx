@@ -27,7 +27,7 @@ let Body=()=>{
 
     let fetchApi=async ()=>{
         try{
-            let api=await fetch(`https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.5204303&lng=73.8567437&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING`)
+            let api=await fetch(`https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.5204303&lng=73.8567437&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING`,{mode:"cors"})
             let res=await api.json() 
             // console.log(res.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
             setData(res?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
