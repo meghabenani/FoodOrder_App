@@ -22,7 +22,7 @@
 
 .header ul{
   display: flex;
-  
+  font-size: 22px;
 }
 
 
@@ -83,4 +83,59 @@
 .shim-card{
   display: flex;
   flex-wrap: wrap;
+}
+
+.menucard{
+  text-align:center;
+  width: 900px;
+  padding: auto;
+  margin: auto;
+
+}
+
+.category-header{
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.category{
+  border-bottom: 1px solid black;
+}
+
+.category-body{
+  text-align: left;
+}
+
+.res-card{
+  display: flex;
+  justify-content: space-between;
+}
+
+.res-img{
+  width:160px;
+  
+}
+
+.res-btn{
+  color:green;
+  padding:5px;
+  margin-inline:40px;
+  width:100px;
+  position: relative;
+  bottom: 15px
+}
+
+.rating{
+  background-color:green;
+  color:white;
+  padding:3px;
+  margin: 2px;
+  border-radius: 15px
+}
+
+.res-info{
+  border:1px solid gray;
+  padding:20px;
+  border-radius:20px
 }

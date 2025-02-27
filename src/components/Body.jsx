@@ -2,13 +2,19 @@ import { useState,useEffect } from "react"
 import RestaurantCards from "./RestaurantCards"
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useonlineStatus from "../utills/useonlineStatus"
+import ResPromoted from "./ResPromoted";
+import { useContext } from "react";
+import UserContext from "../utills/UserContext";
 
 
 let Body=()=>{
     let [val,setVal]=useState("")
     let [data,setData]=useState([])
     let [update,setUpdate]=useState([])
-    
+    let onlineStatus=useonlineStatus()
+    let PromotedRes=ResPromoted(RestaurantCards)
+    let {loggedInUser,setValContext}=useContext(UserContext)
 
     let searchFunc=()=>{
         let x=data.filter((i)=>{
@@ -34,6 +40,7 @@ let Body=()=>{
             setUpdate(res?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
         }
         catch(err){
+            console.log(err);
             
         }
         
@@ -42,6 +49,11 @@ let Body=()=>{
         fetchApi()
     },[])
    
+    if(!onlineStatus){
+        return(
+            <h1>🥹Please check your internet connection..</h1>
+        )
+    }
 
     return update.length==0?<Shimmer/>:(
         <>
@@ -54,14 +66,16 @@ let Body=()=>{
         <button className="rate" onClick={()=>{
             ratedFunc()
         }}>Top rated Restaurants</button>
+        <input type="text" value={loggedInUser} onChange={(e)=>{
+            setValContext(e.target.value)
+        }}/>
         <div className="app">
             
             {update.map((i)=>{
                 return(
                     <div key={i.info.id} >
                         <Link style={{textDecorationLine:"none",color:"black"}} to={'restaurants/'+ i.info.id}>
-                        
-                        <RestaurantCards data={i}/> 
+                        {i.info.avgRating>4.5 ?<PromotedRes data={i}/>:<RestaurantCards data={i}/> }
                         </Link>
                     </div>
                   

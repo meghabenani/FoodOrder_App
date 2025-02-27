@@ -1,4 +1,4 @@
-import { useState,useEffect } from "react";
+import { useState,useEffect,lazy,Suspense,useContext } from "react";
 import Header from "./components/Header";
 import Body from "./components/Body";
 import About from "./components/About";
@@ -6,12 +6,24 @@ import Error from "./components/Error";
 import { createBrowserRouter,Outlet} from "react-router-dom"
 import Contact from "./components/Contact";
 import Menucard from "./components/Menucard";
+import Grocery from "./components/Grocery";
+import UserContext from "./utills/UserContext";
 
 let App=()=>{
+  let [valContext,setValContext]=useState("XYZ")
+  let Grocery=lazy(()=>{
+    import("./components/Grocery")
+})
+
+  
   return(
     <>
-      <Header/>
-      <Outlet/>
+    <UserContext.Provider value={{loggedInUser:valContext , setValContext}} >
+    <Header/>
+    <Outlet/>  
+    </UserContext.Provider>
+    
+      
     </>
   )
 }
@@ -32,6 +44,10 @@ let appRouter=createBrowserRouter([
     {
       path:"/contact",
       element:<Contact/>
+    },
+    { 
+      path:"/grocery",
+      element:<Suspense fallback={<h1>Loading..</h1>}><Grocery/></Suspense>
     },
     {
       path:"/restaurants/:resId",

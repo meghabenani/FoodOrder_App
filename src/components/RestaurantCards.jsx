@@ -1,9 +1,11 @@
-import { res_logo } from "./img_links"
+import { res_logo } from "../utills/img_links"
+
 
 let RestaurantCards=({data})=>{
     
     let {id,name,cloudinaryImageId,avgRating,cuisines}=data.info
     let {deliveryTime}=data.info.sla
+    
 
     return(
         <div className="cards" key={id}>
@@ -11,6 +13,7 @@ let RestaurantCards=({data})=>{
             <h2>{name}</h2>
             <p>&#9733; {avgRating} | {deliveryTime} mins</p>
             <p>{cuisines.join(", ")}</p>
+            
         </div>
     )
 }

@@ -1,9 +1,14 @@
-import { useState } from "react"
+import { useState,useContext} from "react"
 import { Link } from "react-router-dom"
+import useonlineStatus from "../utills/useonlineStatus"
+import UserContext from "../utills/UserContext"
 
 
 let Header=()=>{
     let [isLogin,setisLogin]=useState(true)
+    let onlineStatus=useonlineStatus()
+    let {loggedInUser}=useContext(UserContext)
+
     return(
         <>
         <div className="header">
@@ -11,14 +16,20 @@ let Header=()=>{
             <h1 >Megha's Food order App</h1>
             <ul>
                 <li>
+                    <span>
+                       {onlineStatus?"💚":"🔴"} </span>
+                </li>
+                <li>
                     <Link style={{color:"black"}} to="/">Home</Link>
                     </li>
                 <li><Link style={{color:"black"}} to="/about">About</Link></li>
                 <li><Link style={{color:"black"}} to="/contact">Contact</Link></li>
-                <li>Cart</li>
+                <li >Cart</li>
+                <li><Link style={{color:"black"}} to="/grocery">Grocery</Link></li>
                 <button className="btn" onClick={()=>{
                     setisLogin(!isLogin)
                 }}>{isLogin?"Login":"Logout"}</button>
+                <li>{loggedInUser}</li>
             </ul>
             
             
